@@ -1,5 +1,5 @@
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "http://schema.management.azure.cn/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "logicAppName": {
@@ -98,7 +98,7 @@
           }
         },
         "definition": {
-          "$schema": "http://schema.management.azure.com/providers/Microsoft.Logic/schemas/2014-12-01-preview/workflowdefinition.json#",
+          "$schema": "http://schema.management.azure.cn/providers/Microsoft.Logic/schemas/2014-12-01-preview/workflowdefinition.json#",
           "contentVersion": "1.0.0.0",
           "parameters": {
             "testURI": {

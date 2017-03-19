@@ -42,7 +42,7 @@ You can deploy the template with Azure Portal, or PowerShell, or Azure cross pla
 ### How to Access MySQL
 * Access MySQL using the public DNS name.  By default, the master server can be accessed at port 3306, and the slave server 3307.  By default, a user "admin" is created with all privileges to access from remote hosts. For example, access the master with the following command:
 ```sh
-> mysql -h mysqldns.eastus.cloudapp.azure.com -u admin -p
+> mysql -h mysqldns.eastus.cloudapp.azure.cn -u admin -p
 ```
 * You can access the VMs through ssh.  By default, public ssh ports are 64001 and 64002 for the 2 VMs. Within the VM you can check MySQL health probe by running, for example, the following command, and it should return 200 to indicate MySQL is healthy.
 ```sh
@@ -57,8 +57,8 @@ You can deploy the template with Azure Portal, or PowerShell, or Azure cross pla
 ### How to Monitor MySQL Health
 * MySQL health can be checked by issuing HTTP query to the MySQL probes and verify that the query returns 200 status code.  Replace the following command with your own dns name and location.
 ```sh
-> wget http://mysqldns.eastus.cloudapp.azure.com:9200
-> wget http://mysqldns.eastus.cloudapp.azure.com:9201
+> wget http://mysqldns.eastus.cloudapp.azure.cn:9200
+> wget http://mysqldns.eastus.cloudapp.azure.cn:9201
 ```
 
 ### How to Failover

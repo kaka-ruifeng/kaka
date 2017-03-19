@@ -1,5 +1,5 @@
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "http://schema.management.azure.cn/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "sendgridAccountName": {
@@ -93,7 +93,7 @@
           }
         },
         "definition": {
-          "$schema": "http://schema.management.azure.com/providers/Microsoft.Logic/schemas/2014-12-01-preview/workflowdefinition.json#",
+          "$schema": "http://schema.management.azure.cn/providers/Microsoft.Logic/schemas/2014-12-01-preview/workflowdefinition.json#",
           "contentVersion": "1.0.0.0",
           "parameters": {
             "toAddress": {
@@ -119,7 +119,7 @@
                 "headers": {
                   "Content-type": "application/x-www-form-urlencoded"
                 },
-                "body": "api_user=@{parameters('sendgridUsername')}&api_key=@{parameters('sendgridPassword')}&to=@{parameters('toAddress')}&subject=Logic app connected to SendGrid&text=Congrats you have successfully set up a Logic app to send and email from Sendgrid&from=noreply@azure.com"
+                "body": "api_user=@{parameters('sendgridUsername')}&api_key=@{parameters('sendgridPassword')}&to=@{parameters('toAddress')}&subject=Logic app connected to SendGrid&text=Congrats you have successfully set up a Logic app to send and email from Sendgrid&from=noreply@azure.cn"
               }
             }
           },

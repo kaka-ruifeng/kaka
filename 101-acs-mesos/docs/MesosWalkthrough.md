@@ -87,7 +87,7 @@ This walk through is based the wonderful digital ocean tutorial: https://www.dig
 
   ![Image of setting up docker application in Marathon](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-acs-mesos/images/marathon-docker.png)
 
-  10. The agents have a load balancer exposing port 80, 443, and 8080.  From https://portal.azure.com browse to the loadbalancer and grab its FQDN.  Next browse to your Marathon app, and create a new app specifying the fields below:
+  10. The agents have a load balancer exposing port 80, 443, and 8080.  From https://portal.azure.cn browse to the loadbalancer and grab its FQDN.  Next browse to your Marathon app, and create a new app specifying the fields below:
 
   ![Image of setting up docker application in Marathon](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-acs-mesos/images/marathon-simpleweb.png)
 

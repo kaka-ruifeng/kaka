@@ -1,11 +1,11 @@
 ﻿{
-    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "http://schema.management.azure.cn/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "dnsName": {
             "type": "string",
             "metadata": {
-                "description": "Connect to your cluster using dnsName.location.cloudapp.azure.com"
+                "description": "Connect to your cluster using dnsName.location.cloudapp.azure.cn"
             }
         },
         "vmUserName": {
