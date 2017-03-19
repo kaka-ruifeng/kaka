@@ -42,7 +42,7 @@
             "value": "containerName"
         },
         "existingHiveMetastoreServerName": {
-            "value": "servername.database.windows.net"
+            "value": "servername.database.chinacloudapi.cn"
         },
         "existingHiveMetastoreDatabaseName": {
             "value": "databasename"

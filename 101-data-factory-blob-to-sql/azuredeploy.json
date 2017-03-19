@@ -74,7 +74,7 @@
           "apiVersion": "[variables('apiVersion')]",
           "properties": {
             "type": "AzureSqlLinkedService",
-            "connectionString": "[concat('Server=tcp:',parameters('existingSqlServerName'),'.database.windows.net,1433;Database=', parameters('existingTargetDatabaseName'), ';User ID=',parameters('existingSqlServerUserName'),';Password=',parameters('existingSqlServerPassword'),';Trusted_Connection=False;Encrypt=True;Connection Timeout=30')]"
+            "connectionString": "[concat('Server=tcp:',parameters('existingSqlServerName'),'.database.chinacloudapi.cn,1433;Database=', parameters('existingTargetDatabaseName'), ';User ID=',parameters('existingSqlServerUserName'),';Password=',parameters('existingSqlServerPassword'),';Trusted_Connection=False;Encrypt=True;Connection Timeout=30')]"
           }
         },
         {
