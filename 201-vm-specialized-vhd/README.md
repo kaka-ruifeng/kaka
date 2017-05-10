@@ -65,7 +65,7 @@ If you are looking to accomplish the above scenario through PowerShell instead o
 
     $vm = Add-AzureRmVMNetworkInterface -VM $vm -Id $nic.Id
 
-    $osDiskUri = "https://test.blob.core.windows.net/vhds/osdiskforlinuxsimple.vhd"
+    $osDiskUri = "https://test.blob.core.chinacloudapi.cn/vhds/osdiskforlinuxsimple.vhd"
     $vm = Set-AzureRmVMOSDisk -VM $vm -Name $osDiskName -VhdUri $osDiskUri -CreateOption attach -Linux
 
     ## Create the VM in Azure

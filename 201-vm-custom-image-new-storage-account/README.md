@@ -23,7 +23,7 @@ The process of this template is:
 ## Requiremets
 
 * A preexisting generalized (syspreped) Windows image. For more information on how to create custom Windows images, please refer to [How to capture a Windows virtual machine in the Resource Manager deployment model](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-capture-image/) article.
-* Source image blob full URL. E.g. https://pmcstorage01.blob.core.windows.net/images/images/Win10MasterImage-osDisk.72451a98-4c26-4375-90c5-0a940dd56bab.vhd. Note that container name always comes after  https://pmcstorage01.blob.core.windows.net, in this example it is images. The actual blob name is **images/Win10MasterImage-osDisk.72451a98-4c26-4375-90c5-0a940dd56bab.vhd**.
+* Source image blob full URL. E.g. https://pmcstorage01.blob.core.chinacloudapi.cn/images/images/Win10MasterImage-osDisk.72451a98-4c26-4375-90c5-0a940dd56bab.vhd. Note that container name always comes after  https://pmcstorage01.blob.core.chinacloudapi.cn, in this example it is images. The actual blob name is **images/Win10MasterImage-osDisk.72451a98-4c26-4375-90c5-0a940dd56bab.vhd**.
 
 ## How to deploy this template from Powershell
 
@@ -119,7 +119,7 @@ The process of this template is:
   $adminPassword = $credential.GetNetworkCredential().Password
   # Following line is the equivalent of defining "images/Win10MasterImage-osDisk.72451a98-4c26-4375-90c5-0a940dd56bab.vhd", but here we executed optional steps 5 and 6 and have an array of vhds, we are picking the second vhd 
   $customImageName = $vhds[1].Name  
-  $sourceImageUri = [string]::Format("http://{0}.blob.core.windows.net/{1}/{2}",$sourceStorageAccountName,$sourceVhdContainer,$customImageName)
+  $sourceImageUri = [string]::Format("http://{0}.blob.core.chinacloudapi.cn/{1}/{2}",$sourceStorageAccountName,$sourceVhdContainer,$customImageName)
   $transferVmName = "myTransferVm"
   $newVmName = "myNewWin10Vm"
   $vmSize = "Standard_D1"

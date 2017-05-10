@@ -2,7 +2,7 @@
 
 This template deploys a VM Scale Set from a user provided Linux Custom Image.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-vmss-linux-customimage-autoscale%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-vmss-linux-customimage-autoscale%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-vmss-linux-customimage-autoscale%2Fazuredeploy.json" target="_blank">
@@ -31,7 +31,7 @@ azure vm capture [rgName] [vmName] vhdNamePrefix –t [templateName].json
 
 This commands will export your machine inside the same storage account where the VM resides with the form:
 
-**https://[storageaccountname].blob.core.windows.net/system/Microsoft.Compute/Images/vhds/[your-image-prefix]-osDisk.[GUID].vhd**
+**https://[storageaccountname].blob.core.chinacloudapi.cn/system/Microsoft.Compute/Images/vhds/[your-image-prefix]-osDisk.[GUID].vhd**
 
 And you will find a [templateName].json file in the same folder that will help you to create a new VM based on this VHD.
 
