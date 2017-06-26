@@ -331,7 +331,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.windows.net/vhds/','osdisk.vhd')]"
+              "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/','osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -339,7 +339,7 @@
           "dataDisks": [
             {
               "vhd": {
-                "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.windows.net/vhds/', variables('adDataDisk'),'-1.vhd')]"
+                "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', variables('adDataDisk'),'-1.vhd')]"
               },
               "name": "[concat(variables('adVMName'),'-data-disk1')]",
               "caching": "None",
