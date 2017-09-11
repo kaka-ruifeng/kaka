@@ -22,7 +22,7 @@
     },
     "CentOSVersion": {
       "type": "string",
-      "defaultValue": "7.2",
+      "defaultValue": "6.8",
       "allowedValues": [
         "7.3",
         "7.2",
