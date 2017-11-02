@@ -1,0 +1,24 @@
+{
+  "$schema": "http://schema.management.azure.cn/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmSku": {
+      "value": "Standard_A1"
+    },
+    "CentOSVersion": {
+      "value": "7.3"
+    },
+    "vmssName": {
+      "value": "GEN-UNIQUE-32"
+    },
+    "instanceCount": {
+      "value": 5
+    },
+    "adminUsername": {
+      "value": "Centos"
+    },
+    "adminPassword": {
+      "value": "GEN-PASSWORD"
+    }
+  }
+}
