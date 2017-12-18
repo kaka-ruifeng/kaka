@@ -21,7 +21,7 @@ https://github.com/Azure/azure-quickstart-templates/tree/master/docker-swarm-clu
 
 # 在Azure国际版Docker Swarm Cluster
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fups216%2FDockerSwarm%2Fmaster%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fups216%2FDockerSwarm%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
