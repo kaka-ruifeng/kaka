@@ -1,12 +1,10 @@
 ### Ubuntu VM Scale Set with Application Gateway Integration ###
 
-This template deploys an Ubuntu VM Scale Set integrated with Azure Application Gateway.
+应用程序网关配置轮询调度负载平衡传入连接的端口80(网关的公共IP地址)vm的规模。
+注意,这个模板不在VM上安装应用程序规模设置虚拟机,所以如果你想演示循环负载平衡、模板需要更新(例如通过添加一个扩展安装web服务器)。
+这个模板支持VM规模集1000 VM,并使用Azure磁盘管理。
 
-The Application Gateway is configured for round robin load balancing of incoming connections at port 80 (of the gateway's public IP address) to VMs in the scale set. 
- 
-Note that this template does not install an application on the VM Scale Set VMs, so if you want to demonstrate the round robin load balancing, the template will need to be updated (for example by adding an extension to install a web server). 
-
-This template supports VM scale sets of up to 1,000 VMs, and uses Azure Managed Disks.
+By KAKA
 
 <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-vmss-ubuntu-app-gateway%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
