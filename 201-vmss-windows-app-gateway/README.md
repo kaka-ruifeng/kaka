@@ -11,4 +11,3 @@ By wangruifeng 修改完成
 <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fkaka-ruifeng%2fkaka%2fmaster%2f201-vmss-windows-app-gateway%2fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-

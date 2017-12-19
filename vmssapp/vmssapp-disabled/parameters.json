@@ -1,42 +1,42 @@
 {
-    "$schema": "https://schema.management.azure.cn/schemas/2015-01-01/deploymentParameters.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "publicIPAddresses_vmssappzdappGwPip_domainNameLabel": {
             "value": null
         },
-        "autoscalesettings_vmssappzd_name": {
-            "value": chinanorth
-        },
         "virtualNetworks_vmssappzdvnet_name": {
-            "value": chinanorth
+            "value": null
         },
         "virtualMachineScaleSets_vmssappzd_name": {
-            "value": chinanorth
+            "value": null
         },
         "applicationGateways_vmssappzdappGw_name": {
-            "value": chinanorth
+            "value": null
         },
         "publicIPAddresses_vmssappzdappGwPip_name": {
-            "value": chinanorth
+            "value": null
         },
         "subnets_vmssappzdsubnet_name": {
-            "value": chinanorth
+            "value": null
         },
         "subnets_vmssappzdappGwSubnet_name": {
-            "value": chinanorth
+            "value": null
         },
         "applicationGateways_vmssappzdappGw_id": {
-            "value": chinanorth
+            "value": null
         },
         "applicationGateways_vmssappzdappGw_id_1": {
-            "value": chinanorth
+            "value": null
         },
         "applicationGateways_vmssappzdappGw_id_2": {
-            "value": chinanorth
+            "value": null
         },
         "applicationGateways_vmssappzdappGw_id_3": {
-            "value": chinanorth
+            "value": null
         },
+        "applicationGateways_vmssappzdappGw_id_4": {
+            "value": null
+        }
     }
 }

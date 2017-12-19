@@ -1,17 +1,17 @@
 {
-    "$schema": "https://schema.management.azure.cn/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "publicIPAddresses_vmssappzdappGwPip_domainNameLabel": {
             "defaultValue": null,
             "type": "SecureString"
         },
-        "autoscalesettings_vmssappzd_name": {
-            "defaultValue": "vmssappzd",
-            "type": "String"
-        },
         "virtualNetworks_vmssappzdvnet_name": {
             "defaultValue": "vmssappzdvnet",
+            "type": "String"
+        },
+        "autoscalesettings_vmssautoscale_name": {
+            "defaultValue": "vmssautoscale",
             "type": "String"
         },
         "virtualMachineScaleSets_vmssappzd_name": {
@@ -63,7 +63,7 @@
             "sku": {
                 "name": "Standard_A1",
                 "tier": "Standard",
-                "capacity": 3
+                "capacity": 2
             },
             "name": "[parameters('virtualMachineScaleSets_vmssappzd_name')]",
             "apiVersion": "2017-03-30",
@@ -78,8 +78,9 @@
                     "osProfile": {
                         "computerNamePrefix": "[parameters('virtualMachineScaleSets_vmssappzd_name')]",
                         "adminUsername": "wangruifeng",
-                        "linuxConfiguration": {
-                            "disablePasswordAuthentication": false
+                        "windowsConfiguration": {
+                            "provisionVMAgent": true,
+                            "enableAutomaticUpdates": true
                         },
                         "secrets": []
                     },
@@ -92,9 +93,9 @@
                             }
                         },
                         "imageReference": {
-                            "publisher": "Canonical",
-                            "offer": "UbuntuServer",
-                            "sku": "16.04-LTS",
+                            "publisher": "MicrosoftWindowsServer",
+                            "offer": "WindowsServer",
+                            "sku": "2012-R2-Datacenter",
                             "version": "latest"
                         }
                     },
@@ -104,10 +105,6 @@
                                 "name": "[concat(parameters('virtualMachineScaleSets_vmssappzd_name'),'nic')]",
                                 "properties": {
                                     "primary": true,
-                                    "enableAcceleratedNetworking": false,
-                                    "dnsSettings": {
-                                        "dnsServers": []
-                                    },
                                     "ipConfigurations": [
                                         {
                                             "name": "[concat(parameters('virtualMachineScaleSets_vmssappzd_name'),'ipconfig')]",
@@ -115,7 +112,6 @@
                                                 "subnet": {
                                                     "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vmssappzdvnet_name'), parameters('subnets_vmssappzdsubnet_name'))]"
                                                 },
-                                                "privateIPAddressVersion": "IPv4",
                                                 "applicationGatewayBackendAddressPools": [
                                                     {
                                                         "id": "[concat(resourceId('Microsoft.Network/applicationGateways', parameters('applicationGateways_vmssappzdappGw_name')), concat('/backendAddressPools/', parameters('virtualMachineScaleSets_vmssappzd_name'),'appGwBepool'))]"
@@ -137,9 +133,9 @@
             ]
         },
         {
-            "comments": "已从资源实现通用:“/subscriptions/9ba9eada-2d7d-4ebd-95e1-cd9546a849d5/resourceGroups/vmssapp/providers/microsoft.insights/autoscalesettings/vmssappzd”。",
+            "comments": "已从资源实现通用:“/subscriptions/9ba9eada-2d7d-4ebd-95e1-cd9546a849d5/resourceGroups/vmssapp/providers/microsoft.insights/autoscalesettings/vmssautoscale”。",
             "type": "microsoft.insights/autoscalesettings",
-            "name": "[parameters('autoscalesettings_vmssappzd_name')]",
+            "name": "[parameters('autoscalesettings_vmssautoscale_name')]",
             "apiVersion": "2014-04-01",
             "location": "westus",
             "tags": {},
@@ -149,15 +145,15 @@
                     {
                         "name": "Auto created scale condition",
                         "capacity": {
-                            "minimum": "3",
-                            "maximum": "3",
-                            "default": "3"
+                            "minimum": "1",
+                            "maximum": "1000",
+                            "default": "1"
                         },
                         "rules": []
                     }
                 ],
                 "enabled": true,
-                "name": "[parameters('autoscalesettings_vmssappzd_name')]",
+                "name": "[parameters('autoscalesettings_vmssautoscale_name')]",
                 "targetResourceUri": "[resourceId('Microsoft.Compute/virtualMachineScaleSets', parameters('virtualMachineScaleSets_vmssappzd_name'))]"
             },
             "dependsOn": [
@@ -173,7 +169,7 @@
             "scale": null,
             "properties": {
                 "provisioningState": "Succeeded",
-                "resourceGuid": "deadd53b-d212-4275-a1c8-78dcf58bed96",
+                "resourceGuid": "dad5a48b-a6f0-4f23-b889-1d01551d4a8b",
                 "sku": {
                     "name": "Standard_Large",
                     "tier": "Standard",
@@ -182,7 +178,7 @@
                 "gatewayIPConfigurations": [
                     {
                         "name": "appGwIpConfig",
-                        "etag": "W/\"8c01fb41-1f3a-4c2d-bf2d-054cd818c848\"",
+                        "etag": "W/\"cac50a08-c9b8-4a0b-af7c-32d2f8947eb8\"",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "subnet": {
@@ -196,7 +192,7 @@
                 "frontendIPConfigurations": [
                     {
                         "name": "appGwFrontendIP",
-                        "etag": "W/\"8c01fb41-1f3a-4c2d-bf2d-054cd818c848\"",
+                        "etag": "W/\"cac50a08-c9b8-4a0b-af7c-32d2f8947eb8\"",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "privateIPAllocationMethod": "Dynamic",
@@ -209,7 +205,7 @@
                 "frontendPorts": [
                     {
                         "name": "appGwFrontendPort",
-                        "etag": "W/\"8c01fb41-1f3a-4c2d-bf2d-054cd818c848\"",
+                        "etag": "W/\"cac50a08-c9b8-4a0b-af7c-32d2f8947eb8\"",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "port": 80
@@ -219,18 +215,15 @@
                 "backendAddressPools": [
                     {
                         "name": "[concat(parameters('applicationGateways_vmssappzdappGw_name'),'Bepool')]",
-                        "etag": "W/\"8c01fb41-1f3a-4c2d-bf2d-054cd818c848\"",
+                        "etag": "W/\"cac50a08-c9b8-4a0b-af7c-32d2f8947eb8\"",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "backendIPConfigurations": [
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Compute/virtualMachineScaleSets', parameters('virtualMachineScaleSets_vmssappzd_name')), '/virtualMachines/1/networkInterfaces/vmssappzdnic/ipConfigurations/vmssappzdipconfig')]"
+                                    "id": "[concat(resourceId('Microsoft.Compute/virtualMachineScaleSets', parameters('virtualMachineScaleSets_vmssappzd_name')), '/virtualMachines/0/networkInterfaces/vmssappzdnic/ipConfigurations/vmssappzdipconfig')]"
                                 },
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Compute/virtualMachineScaleSets', parameters('virtualMachineScaleSets_vmssappzd_name')), '/virtualMachines/4/networkInterfaces/vmssappzdnic/ipConfigurations/vmssappzdipconfig')]"
-                                },
-                                {
-                                    "id": "[concat(resourceId('Microsoft.Compute/virtualMachineScaleSets', parameters('virtualMachineScaleSets_vmssappzd_name')), '/virtualMachines/6/networkInterfaces/vmssappzdnic/ipConfigurations/vmssappzdipconfig')]"
+                                    "id": "[concat(resourceId('Microsoft.Compute/virtualMachineScaleSets', parameters('virtualMachineScaleSets_vmssappzd_name')), '/virtualMachines/3/networkInterfaces/vmssappzdnic/ipConfigurations/vmssappzdipconfig')]"
                                 }
                             ],
                             "backendAddresses": []
@@ -240,7 +233,7 @@
                 "backendHttpSettingsCollection": [
                     {
                         "name": "appGwBackendHttpSettings",
-                        "etag": "W/\"8c01fb41-1f3a-4c2d-bf2d-054cd818c848\"",
+                        "etag": "W/\"cac50a08-c9b8-4a0b-af7c-32d2f8947eb8\"",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "port": 80,
@@ -254,7 +247,7 @@
                 "httpListeners": [
                     {
                         "name": "appGwHttpListener",
-                        "etag": "W/\"8c01fb41-1f3a-4c2d-bf2d-054cd818c848\"",
+                        "etag": "W/\"cac50a08-c9b8-4a0b-af7c-32d2f8947eb8\"",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "frontendIPConfiguration": {
@@ -272,7 +265,7 @@
                 "requestRoutingRules": [
                     {
                         "name": "rule1",
-                        "etag": "W/\"8c01fb41-1f3a-4c2d-bf2d-054cd818c848\"",
+                        "etag": "W/\"cac50a08-c9b8-4a0b-af7c-32d2f8947eb8\"",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "ruleType": "Basic",
@@ -306,13 +299,13 @@
             "scale": null,
             "properties": {
                 "provisioningState": "Succeeded",
-                "resourceGuid": "bae8ee77-3c58-40eb-a28c-7e2b9dca275d",
-                "ipAddress": "104.209.47.22",
+                "resourceGuid": "3b32bfb3-441d-4425-8bdf-dbca4c47cae3",
+                "ipAddress": "13.91.51.240",
                 "publicIPAddressVersion": "IPv4",
                 "publicIPAllocationMethod": "Dynamic",
                 "idleTimeoutInMinutes": 4,
                 "dnsSettings": {
-                    "fqdn": "37c6418b-6b39-4806-a660-5ff24528b704.cloudapp.net",
+                    "fqdn": "8cce7a9d-574f-43d1-880f-34ddda4ee58d.cloudapp.net",
                     "domainNameLabel": "[parameters('publicIPAddresses_vmssappzdappGwPip_domainNameLabel')]"
                 }
             },
@@ -327,7 +320,7 @@
             "scale": null,
             "properties": {
                 "provisioningState": "Succeeded",
-                "resourceGuid": "d85e465e-f2d8-438a-8e4b-5152b3982206",
+                "resourceGuid": "24761957-5ff1-4d18-b937-adea4b500a34",
                 "addressSpace": {
                     "addressPrefixes": [
                         "10.0.0.0/16"
@@ -336,7 +329,7 @@
                 "subnets": [
                     {
                         "name": "vmssappzdsubnet",
-                        "etag": "W/\"80dc96aa-2018-463d-b830-86a5ca124f91\"",
+                        "etag": "W/\"86cf9caf-e968-42ca-b152-7ec9247f1653\"",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "addressPrefix": "10.0.8.0/21"
@@ -344,7 +337,7 @@
                     },
                     {
                         "name": "vmssappzdappGwSubnet",
-                        "etag": "W/\"80dc96aa-2018-463d-b830-86a5ca124f91\"",
+                        "etag": "W/\"86cf9caf-e968-42ca-b152-7ec9247f1653\"",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "addressPrefix": "10.0.1.0/24"
