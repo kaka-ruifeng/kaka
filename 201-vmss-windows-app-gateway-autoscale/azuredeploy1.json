@@ -54,7 +54,7 @@
     "longNamingInfix": "[toLower(parameters('vmssName'))]",
     "addressPrefix": "10.0.0.0/16",
     "subnetPrefix": "10.0.8.0/21",
-    "uniqueStringArray": "[concat(uniqueString(concat(resourceGroup().id, variables('newStorageAccountSuffix'), 'diag')))]",
+    "diagStorageAccount": "diagstorageaccount",
     "virtualNetworkName": "[concat(variables('namingInfix'), 'vnet')]",
     "publicIPAddressName": "[concat(variables('namingInfix'), 'pip')]",
     "subnetName": "[concat(variables('namingInfix'), 'subnet')]",
@@ -77,7 +77,7 @@
     "appGwFrontendPort": 80,
     "appGwBackendPort": 80,
     "appGwBePoolName": "[concat(variables('namingInfix'), 'appGwBepool')]",
-    "diagnosticsStorageAccountName": "[variables('uniqueStringArray')]",
+    "diagnosticsStorageAccountName": "[variables('diagStorageAccount')]",
     "diagnosticsStorageAccountResourceGroup": "[resourceGroup().name]",
     "accountid": "[concat('/subscriptions/',subscription().subscriptionId,'/resourceGroups/',variables('diagnosticsStorageAccountResourceGroup'),'/providers/','Microsoft.Storage/storageAccounts/', variables('diagnosticsStorageAccountName'))]",
     "wadlogs": "<WadCfg> <DiagnosticMonitorConfiguration overallQuotaInMB=\"4096\" xmlns=\"http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration\"> <DiagnosticInfrastructureLogs scheduledTransferLogLevelFilter=\"Error\"/> <WindowsEventLog scheduledTransferPeriod=\"PT1M\" > <DataSource name=\"Application!*[System[(Level = 1 or Level = 2)]]\" /> <DataSource name=\"Security!*[System[(Level = 1 or Level = 2)]]\" /> <DataSource name=\"System!*[System[(Level = 1 or Level = 2)]]\" /></WindowsEventLog>",
@@ -330,7 +330,7 @@
             "name": "Profile1",
             "capacity": {
               "minimum": "1",
-              "maximum": "10",
+              "maximum": "1000",
               "default": "1"
             },
             "rules": [
