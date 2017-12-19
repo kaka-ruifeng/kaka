@@ -54,7 +54,7 @@
     "longNamingInfix": "[toLower(parameters('vmssName'))]",
     "addressPrefix": "10.0.0.0/16",
     "subnetPrefix": "10.0.8.0/21",
-    "uniqueStringArray": "[concat(uniqueString(concat(resourceGroup().id, variables('newStorageAccountSuffix'), 'diag')))]",
+    "uniqueStringArray": "[concat(uniqueString(concat(resourceGroup().id, 'diag')))]",
     "virtualNetworkName": "[concat(variables('namingInfix'), 'vnet')]",
     "publicIPAddressName": "[concat(variables('namingInfix'), 'pip')]",
     "subnetName": "[concat(variables('namingInfix'), 'subnet')]",
