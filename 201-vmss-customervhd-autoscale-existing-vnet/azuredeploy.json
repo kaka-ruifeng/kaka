@@ -189,7 +189,7 @@
             "osDisk": {
               "name": "[variables('osDiskName')]",
               "caching": "ReadOnly",
-              "createOption": "FromImage",
+              "createOption": "Attach",
               "osType": "Linux",
               "image": {
                 "uri": "[parameters('sourceImageVhdUri')]"
