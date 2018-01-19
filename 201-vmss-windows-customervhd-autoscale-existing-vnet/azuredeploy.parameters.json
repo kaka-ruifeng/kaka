@@ -1,0 +1,27 @@
+{
+  "$schema": "http://schema.management.azure.cn/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmSku": {
+      "value": "Standard_A1"
+    },
+    "sourceImageVhdUri": {
+      "value": ""
+    },
+    "vmssName": {
+      "value": "GEN-UNIQUE-32"
+    },
+    "instanceCount": {
+      "value": 5
+    },
+    "adminUsername": {
+      "value": ""
+    },
+    "adminPassword": {
+      "value": "GEN-PASSWORD"
+    },
+    "existingSubnetResourceId": {
+      "value": ""
+    }
+  }
+}
