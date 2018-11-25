@@ -160,7 +160,7 @@ az group deployment create --resource-group OpenShiftTestRG --template-file azur
 
 Monitor deployment via CLI or Portal and get the console URL from outputs of successful deployment which will look something like (if using sample parameters file and "West US 2" location):
 
-`https://me-master1.westus2.cloudapp.azure.com/console`
+`https://me-master1.westus2.cloudapp.azure.cn/console`
 
 The cluster will use self-signed certificates. Accept the warning and proceed to the login page.
 
@@ -194,7 +194,7 @@ Few options you have
   b. openshiftMasterSsh  ssh command for master node<br/>
   c. openshiftNodeLoadBalancerFQDN node load balancer<br/>
 2. Get the deployment output data
-  a. portal.azure.com -> choose 'Resource groups' select your group select 'Deployments' and there the deployment 'Microsoft.Template'. As output from the deployment it contains information about the openshift console url, ssh command and load balancer url.<br/>
+  a. portal.azure.cn -> choose 'Resource groups' select your group select 'Deployments' and there the deployment 'Microsoft.Template'. As output from the deployment it contains information about the openshift console url, ssh command and load balancer url.<br/>
   b. With the Azure CLI : 
     ```bash
     az group deployment list -g <resource group name>

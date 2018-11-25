@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "chinanorth"
+    },
+    "numberOfInstances": {
+      "value": 2
+    },
+    "virtualMachineName": {
+      "value": "vm-images-04"
+    },
+    "virtualMachineSize": {
+      "value": "Standard_A2"
+    },
+    "adminUsername": {
+      "value": "jciadmin"
+    },
+    "adminPassword": {
+      "metadata": {
+        "description": "Administrator password"
+      },
+      "type": "securestring",
+	  "value": "****************"
+    },
+    "virtualNetworkName": {
+      "value": "vnet-msdn-china-east-001"
+    },
+    "storageAccountType": {
+      "value": "Standard_LRS"
+    },
+
+    "imagePublisher": {
+      "value": "MicrosoftWindowsServer"
+    },
+    "imageOffer": {
+      "value": "WindowsServer"
+    },
+    "imageSKU": {
+      "value": "2016-Datacenter"
+    },
+    "imageVersion": {
+      "value": "latest"
+    },
+    "backupVaultName": {
+      "value": "rsv-ps-msdn-echina-001"
+    },
+    "backupFabricName": {
+      "value": "Azure"
+    },
+    "backupVaultRGName": {
+      "value": "backuptest"
+    },
+    "backupVaultRGIsNew": {
+      "value": false
+    },
+    "backupPolicyName": {
+      "value": "DefaultPolicy"
+    },
+    "networkSecurityGroupName": {
+      "value": "nsg-snet-msdn-echina"
+    },
+    "diagnosticsStorageAccountName": {
+      "value": "backcupdiagnos"
+    },
+    "diagnosticsStorageAccountId": {
+      "value": "/subscriptions/*********************/resourceGroups/****************/providers/Microsoft.Storage/storageAccounts/*****************"
+    },
+    "subnetName": {
+      "value": "snet-msdn-echina-002"
+    },
+    "Rgname": {
+      "value": "backuptest"
+    }
+
+  }
+}
