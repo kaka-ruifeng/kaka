@@ -88,7 +88,7 @@ then
   export CLOUDNAME="AzureUSGovernmentCloud"
 else
   DOCKERREGISTRYYAML=dockerregistrypublic.yaml
-  export CLOUDNAME="AzurePublicCloud"
+  export CLOUDNAME="AzureChinaCloud"
 fi
 
 # Create Master nodes grouping
