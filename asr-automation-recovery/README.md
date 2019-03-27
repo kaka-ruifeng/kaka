@@ -1,6 +1,8 @@
 # Azure Site Recovery Automation Runbooks
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fazure-quickstart-templates%2Fmaster%2Fasr-automation-recovery%2F%2Fazuredeploy.json) 
+<a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3a%2f%2fgithub.com%2fAzure%2fazure-quickstart-templates%2fblob%2fmaster%2fasr-automation-recovery%2fazuredeploy.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
 
 This Resource Manager Template will deploy the following:
 
@@ -132,7 +134,7 @@ This runbook uses an external powershellscript located at https://raw.githubuser
 
 Click *Deploy to Azure* below to start the deployment
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fazure-quickstart-templates%2Fmaster%2Fasr-automation-recovery%2F%2Fazuredeploy.json) 
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fazure-quickstart-templates%2Fmaster%2Fasr-automation-recovery%2F%2Fazuredeploy.json) 
 
 
 
