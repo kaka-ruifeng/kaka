@@ -11,16 +11,9 @@
         "automationRegion": {
             "type": "string",
             "allowedValues": [
-                "westeurope",
-                "southeastasia",
-                "eastus2",
-                "southcentralus",
-                "japaneast",
-                "northeurope",
-                "canadacentral",
-                "australiasoutheast",
-                "centralindia",
-                "westcentralus"
+                "chinanorth",
+                "chinanorth2",
+                "chinaeast2"
             ],
             "metadata": {
                 "description": "Specify the region for your automation account"
